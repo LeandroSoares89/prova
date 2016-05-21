@@ -19,7 +19,7 @@ public class EquipamentoDAO extends ConnectionFactory implements CRUD{
 			ps = conexao.prepareStatement(sql);
 			ps.setString(1, equipamento.getNome());
 			ps.setString(2, equipamento.getDescricao());
-			ps.executeQuery();
+			ps.executeUpdate();
 		} catch (Exception e) {
 			System.err.println("Erro: "+ e.getMessage());
 			e.printStackTrace();
