@@ -9,5 +9,5 @@ public interface CRUD {
 
 	void updateEquipamento(Equipamento equipamento);
 
-	List<Equipamento> selectAll();
+	List<Equipamento> selectAll(Equipamento equipamento);
 }

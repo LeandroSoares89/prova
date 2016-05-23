@@ -3,6 +3,7 @@ package br.com.prova.model;
 import java.util.List;
 
 public class EquipamentoRN implements CRUD{
+	private EquipamentoDAO equipamentoDAO = new EquipamentoDAO(); 
 
 	@Override
 	public void inserirEquipamento(Equipamento equipamento) {
@@ -23,9 +24,8 @@ public class EquipamentoRN implements CRUD{
 	}
 
 	@Override
-	public List<Equipamento> selectAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Equipamento> selectAll(Equipamento equipamento) {
+		return this.equipamentoDAO.selectAll(equipamento);
 	}
 
 }

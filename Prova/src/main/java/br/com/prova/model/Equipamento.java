@@ -14,7 +14,6 @@ public class Equipamento {
 	public void setCodigo(Long codigo) {
 		this.codigo = codigo;
 	}
-
 	public String getNome() {
 		return nome;
 	}

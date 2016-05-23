@@ -8,8 +8,9 @@
 
 <h:body>
 	<h:form>
-		<h:dataTable value="#{mbEquipamento.listagemEquipamento}"
-			var="objEquipamento">
+		<h:dataTable value="#{mbEquipamento.listagemEquipamento}" var="ObjEquipamento"
+			
+			>
 			<h:column>
 				<f:facet name="header">
 					<h:outputText value="Listagem de Equipamentos" />
@@ -17,11 +18,11 @@
 			</h:column>
 			<h:column>
 				<f:facet name="header">Nome</f:facet>
-				<h:outputText value="#{objEquipamento.nome}" />
+				<h:outputText value="#{ObjEquipamento.nome}" />
 			</h:column>
 			<h:column>
 				<f:facet name="header">descrição</f:facet>
-				<h:outputText value="#{objEquipamento.descricao}" />
+				<h:outputText value="#{ObjEquipamento.descricao}" />
 			</h:column>
 		</h:dataTable>
 

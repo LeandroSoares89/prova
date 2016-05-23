@@ -22,11 +22,11 @@ public class MBEquipamento  {
 	// Getters e Setters
 	
 	
-		public String getListagemEquipamento(){
+		public List<Equipamento> getListagemEquipamento(){
 			if(lsequipamento == null){
-				new EquipamentoRN().selectAll();
+				
 			}
-			return "lsequipamento";
+			return new EquipamentoRN().selectAll(equipamento);
 			
 		}
 		public Equipamento getEquipamento() {
