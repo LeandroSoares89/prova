@@ -10,23 +10,31 @@
 	<h:form>
 		<h:dataTable value="#{mbEquipamento.listagemEquipamento}"
 			var="objEquipamento">
+			<f:facet name="header">
+				<h:commandLink value="clique para adicionar um novo paciente"
+					action="#{mbEquipamento.actionNovo}" />
+				<br />
+				<h:outputLabel value="Listagem de Equipamentos" />
+			</f:facet>
 			<h:column>
 				<f:facet name="header">
-					<h:outputText value="Listagem de Equipamentos" />
+					<h:outputLabel value="Codigo" />
 				</f:facet>
+				<h:outputLabel value="#{objEquipamento.codigo}" />
 			</h:column>
 			<h:column>
-				<f:facet name="header">Nome</f:facet>
+				<f:facet name="header">
+					<h:outputLabel value="Nome" />
+				</f:facet>
 				<h:outputText value="#{objEquipamento.nome}" />
 			</h:column>
 			<h:column>
-				<f:facet name="header">descrição</f:facet>
+				<f:facet name="header">
+					<h:outputLabel value="Descrição" />
+				</f:facet>
 				<h:outputText value="#{objEquipamento.descricao}" />
 			</h:column>
 		</h:dataTable>
-
-
 	</h:form>
-
 </h:body>
 </html>
