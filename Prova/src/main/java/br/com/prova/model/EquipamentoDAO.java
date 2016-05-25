@@ -26,7 +26,7 @@ public class EquipamentoDAO extends ConnectionFactory implements CRUD{
 			System.err.println("Erro: "+ e.getMessage());
 			e.printStackTrace();
 		}finally{
-			closeConnection(conexao, ps, null);
+			closeConnection(conexao, ps , null);
 		}
 		
 	}
@@ -45,29 +45,33 @@ public class EquipamentoDAO extends ConnectionFactory implements CRUD{
 
 	@Override
 	public List<Equipamento> selectAll() {
-		List<Equipamento> lsEquipamento = null;
 		Connection conexao = null;
-		PreparedStatement  ps = null;
+		PreparedStatement ps = null;
 		ResultSet rs = null;
-		String sql = "SELECT codigo, nome, descricao"+
-		" FROM equipamento ORDER BY codigo";
+		List<Equipamento> lsEquipamento = null;
+		String sql ="	SELECT nome, descricao FROM  equipamento ORDER BY codigo";
 		
 		try {
 			conexao = openConnection();
 			ps = conexao.prepareStatement(sql);
-			rs= ps.executeQuery();
+			rs = ps.executeQuery(sql);
 			lsEquipamento = new ArrayList<Equipamento>();
 			while(rs.next()){
-				Equipamento equipamento = new Equipamento();
+				Equipamento equipamento= new Equipamento();
 				equipamento.setCodigo(rs.getLong("codigo"));
 				equipamento.setNome(rs.getString("nome"));
 				equipamento.setDescricao(rs.getString("descricao"));
 				lsEquipamento.add(equipamento);
 			}
+			
+			
 		} catch (Exception e) {
-			System.err.println("Erro: " + e.getMessage());
+			System.err.println("Erro: "+ e.getMessage());
 			e.printStackTrace();
+		}finally{
+			closeConnection(conexao, ps , null);
 		}
+		
 		return lsEquipamento;
 	}
 

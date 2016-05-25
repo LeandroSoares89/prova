@@ -8,33 +8,35 @@
 
 <h:body>
 	<h:form>
-		<h:dataTable value="#{mbEquipamento.listagemEquipamento}"
-			var="objEquipamento">
-			<f:facet name="header">
-				<h:commandLink value="clique para adicionar um novo paciente"
-					action="#{mbEquipamento.actionNovo}" />
-				<br />
-				<h:outputLabel value="Listagem de Equipamentos" />
-			</f:facet>
+		<h:dataTable value="#{mbEquipamento.listagemEquipamento}" var="ObjEquipamento"
+			
+			>
 			<h:column>
 				<f:facet name="header">
-					<h:outputLabel value="Codigo" />
+					<h:outputText value="Listagem de Equipamentos" />
 				</f:facet>
-				<h:outputLabel value="#{objEquipamento.codigo}" />
 			</h:column>
 			<h:column>
-				<f:facet name="header">
-					<h:outputLabel value="Nome" />
-				</f:facet>
-				<h:outputText value="#{objEquipamento.nome}" />
+				<f:facet name="header">codigo</f:facet>
+				<h:outputText value="#{ObjEquipamento.codigo}" />
 			</h:column>
 			<h:column>
-				<f:facet name="header">
-					<h:outputLabel value="Descrição" />
-				</f:facet>
-				<h:outputText value="#{objEquipamento.descricao}" />
+				<f:facet name="header">Nome</f:facet>
+				<h:outputText value="#{ObjEquipamento.nome}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">descrição</f:facet>
+				<h:outputText value="#{ObjEquipamento.descricao}" />
 			</h:column>
 		</h:dataTable>
+<h:column>
+				<f:facet name="header">Opçoes</f:facet>
+				<h:commandButton value="Editar" action="form_equipamento">
+				<f:setPropertyActionListener value="#{ObjEquipamento}" target="#{mbEquipamento.equipamento}"></f:setPropertyActionListener>
+				</h:commandButton>
+			</h:column>
+
 	</h:form>
+
 </h:body>
 </html>
