@@ -13,7 +13,7 @@ public class EquipamentoRN {
 	}
 
 	public void deletarEquipamento(Equipamento equipamento) {
-		// TODO Auto-generated method stub
+		new EquipamentoDAO().deletarEquipamento(equipamento);
 
 	}
 

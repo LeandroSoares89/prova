@@ -6,16 +6,19 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
 
-<h:body>
+<ui:composition template="/templates/layout.xhtml">
+<ui:define name="principal">
 	<h:form>
-		<h:dataTable value="#{mbEquipamento.listagemEquipamento}" var="ObjEquipamento"
+	
+		<h:dataTable styleClass="tabela" headerClass="tbcabecalho" value="#{mbEquipamento.listagemEquipamento}"
+			var="ObjEquipamento">
 			
-			>
-			<h:column>
 				<f:facet name="header">
 					<h:outputText value="Listagem de Equipamentos" />
+					<br/>
+					<h:commandLink value="Click aqui para adicionar novo equipamento!" action="#{mbEquipamento.actionNovo}"></h:commandLink>
 				</f:facet>
-			</h:column>
+			
 			<h:column>
 				<f:facet name="header">codigo</f:facet>
 				<h:outputText value="#{ObjEquipamento.codigo}" />
@@ -28,15 +31,22 @@
 				<f:facet name="header">descrição</f:facet>
 				<h:outputText value="#{ObjEquipamento.descricao}" />
 			</h:column>
-		</h:dataTable>
-<h:column>
-				<f:facet name="header">Opçoes</f:facet>
-				<h:commandButton value="Editar" action="form_equipamento">
-				<f:setPropertyActionListener value="#{ObjEquipamento}" target="#{mbEquipamento.equipamento}"></f:setPropertyActionListener>
-				</h:commandButton>
-			</h:column>
-
+		
+		<h:column>
+			<f:facet name="header">Opçoes</f:facet>
+			<h:commandButton  value="Editar" action="form_equipamento">
+				<f:setPropertyActionListener value="#{ObjEquipamento}"
+					target="#{mbEquipamento.equipamento}"></f:setPropertyActionListener>
+					</h:commandButton>
+					
+			<h:commandButton value="Excluir" action="#{mbEquipamento.actionDeletar}">
+				<f:setPropertyActionListener value="#{ObjEquipamento}"
+					target="#{mbEquipamento.equipamento}"></f:setPropertyActionListener>
+			</h:commandButton>
+		</h:column>
+</h:dataTable>
 	</h:form>
-
-</h:body>
+	<tr/>
+</ui:define>
+</ui:composition>
 </html>

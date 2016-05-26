@@ -8,10 +8,10 @@ import java.sql.Statement;
 
 
 public class ConnectionFactory {
-      private static final String DRIVER="org.postgresql.Driver";
-	  private static final String URL="jdbc:postgresql://localhost5432/bd_equipamento";
-	  private static final String USER="postgres";
-	  private static final String PASSWORD="123456";
+	private static final String DRIVER = "org.postgresql.Driver";
+	private static final String URL = "jdbc:postgresql://localhost:5432/bd_equipamento";
+	private static final String USER = "postgres";
+	private static final String PASSWORD = "123456";
 	  
 	  public Connection openConnection(){
 		  try {

@@ -5,10 +5,10 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
-
-<h:body>
+<ui:composition template="/templates/layout.xhtml">
+<ui:define name="principal">
 <h:form>
-<h:panelGrid columns="2">
+<h:panelGrid columns="2" styleClass="painel "  headerClass="pncabecalho" columnClasses="pnprimeira, pnultima">
 <f:facet name="header">
 <h:outputText value="Cadastro de equipamento"/>
 </f:facet>
@@ -16,10 +16,11 @@
 <h:inputText value="#{mbEquipamento.equipamento.nome}"/>
 <h:outputText value="descricao"/>
 <h:inputText value="#{mbEquipamento.equipamento.descricao}"/>
-
+<h:commandButton styleClass="botoes" value="Gravar" action="#{mbEquipamento.inserirEquipamento}" />
 </h:panelGrid>
 
 </h:form>
 
-</h:body>
+</ui:define>
+</ui:composition>
 </html>
