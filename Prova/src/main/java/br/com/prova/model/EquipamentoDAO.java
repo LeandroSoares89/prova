@@ -25,8 +25,10 @@ public class EquipamentoDAO extends ConnectionFactory implements CRUD {
 		} catch (Exception e) {
 			System.err.println("Erro: " + e.getMessage());
 			e.printStackTrace();
+
 		} finally {
 			closeConnection(conexao, ps, null);
+
 		}
 
 	}
@@ -81,6 +83,7 @@ public class EquipamentoDAO extends ConnectionFactory implements CRUD {
 	}
 
 	@Override
+
 	public List<Equipamento> selectAll() {
 		List<Equipamento> lsEquipamento = null;
 		Connection conexao = null;
@@ -109,8 +112,9 @@ public class EquipamentoDAO extends ConnectionFactory implements CRUD {
 		} finally {
 			closeConnection(conexao, ps, rs);
 		}
-
 		return lsEquipamento;
+
 	}
+
 
 }

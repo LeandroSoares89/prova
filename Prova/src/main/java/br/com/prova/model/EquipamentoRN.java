@@ -2,7 +2,12 @@ package br.com.prova.model;
 
 import java.util.List;
 
+
+
+
 public class EquipamentoRN {
+	private EquipamentoDAO equipamentoDAO = new EquipamentoDAO(); 
+
 
 	public void inserirEquipamento(Equipamento equipamento) {
 		if(equipamento.getCodigo() == null || equipamento.getCodigo()==0){
@@ -19,8 +24,11 @@ public class EquipamentoRN {
 
 
 
+
+
+
 	public List<Equipamento> selectAll() {
-		return new EquipamentoDAO().selectAll();
+		return this.equipamentoDAO.selectAll();
 	}
 
 }

@@ -26,11 +26,13 @@ public class MBEquipamento  {
 	
 		public List<Equipamento> getListagemEquipamento(){
 			if(lsequipamento == null){
+
 				lsequipamento = new EquipamentoRN().selectAll();
+			
 			}
 			return lsequipamento;
-			
 		}
+		
 		public Equipamento getEquipamento() {
 			return equipamento;
 		}

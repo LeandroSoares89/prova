@@ -9,11 +9,10 @@
 <ui:composition template="/templates/layout.xhtml">
 <ui:define name="principal">
 	<h:form>
+
 	
-		<h:dataTable styleClass="tabela" headerClass="tbcabecalho" value="#{mbEquipamento.listagemEquipamento}"
-			var="ObjEquipamento">
-			
-				<f:facet name="header">
+		<h:dataTable styleClass="tabela" headerClass="tbcabecalho" value="#{mbEquipamento.listagemEquipamento}"	var="ObjEquipamento">
+			<f:facet name="header">
 					<h:outputText value="Listagem de Equipamentos" />
 					<br/>
 					<h:commandLink value="Click aqui para adicionar novo equipamento!" action="#{mbEquipamento.actionNovo}"></h:commandLink>
